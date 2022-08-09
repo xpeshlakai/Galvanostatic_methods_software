@@ -9,7 +9,8 @@ import matplotlib.pyplot as plt
 
 def run_manual_test(pstat, volt, dt, t_stop, liscurr): #list of choosen currents
     """
-    Run a voltammetric test in maunal/direct mode. 
+    Run a galvanostatic test in manual/direct mode through the
+    implementation of a feedback loop. Voltage will adjust to desired current. 
 
     pstat      = potentiostat
     volt_func  = output voltage function
