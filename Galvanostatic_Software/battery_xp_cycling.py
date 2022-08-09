@@ -91,7 +91,6 @@ if __name__ == '__main__':
     # Run parameters
     dt = .001                # Scan rate seconds    
     t_total = 360.0         # Each Trial duration in sec
-
     #amount of curr values must equal amount of volt values
     liscurr = [-100, 100, -100, 100]      # Chosen Applied Currents
     lisvolt = [0.005, 1.5, 0.005, 1.5]     # Chosen Applied Volt 
@@ -99,7 +98,6 @@ if __name__ == '__main__':
     # Create device object, set voltage/current ranges and run test
     pstat = Potentiostat('/COM3')
     pstat.set_all_elect_connected(True)
-
     pstat.set_volt_range('5V')
     pstat.set_curr_range('1000uA')
 
@@ -114,11 +112,11 @@ if __name__ == '__main__':
     pstat.set_all_elect_connected(False)    
 
     # Plot results voltage vs time
-    plt.figure("Chronopotentiometry")
+    plt.figure("Cycling")
     plt.subplot(211)
     plt.plot(t,volt)
     current= ("current: "+str(liscurr)+"uA")
-    plt.suptitle(t="Chronopotentiometry")
+    plt.suptitle(t="Cycling")
     plt.title(label=current,fontsize=10,color="black")
     plt.xlabel('time (s)')
     plt.ylabel('potential (V)')
